@@ -12,6 +12,8 @@ html,body{
 :root{
     /*Background colors */
     --bg-primary-color:linear-gradient(to right,black,rgb(29, 11, 29),black);
+       --bg-fill-color:rgb(192, 12, 192);
+       --bg-food-color:rgb(197, 11, 11);
 
     /*Text colors */
     --text-primary-color: rgb(204, 201, 201);
@@ -27,6 +29,8 @@ html,body{
 
     /* border colors */
     --border-primary-color: rgb(66, 12, 66);
+ 
+    
 
     /* border radius*/
     --border-radius-xs:4px;
@@ -47,6 +51,17 @@ html{
 main,section{
     height: 100%;
     width: 100%;
+}
+
+.btn{
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+.btn:hover{
+    transform: scale(1.1);
 }
 
 section{
@@ -81,7 +96,43 @@ section .infos{
 }
 
 .block{
-    height: 30px;
-    width: 30px;
-    border: 1px solid var(--border-primary-color)
+    /* height: 30px;
+    width: 30px; */
+    border: 1px solid var(--border-primary-color);
+    border-radius: 50%;
+    
 }
+
+.fill{
+    background-color: var(--bg-fill-color);
+}
+
+.food{
+    background-color: var(--bg-food-color);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal .start-game,.modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:var(--space-lg)
+
+}
+.modal .game-over{
+    display: none;
+}
+
+
