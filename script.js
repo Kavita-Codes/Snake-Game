@@ -12,8 +12,8 @@ const timeElement = document.querySelector("#time")
 const blockHeight = 30
 const blockWidth = 30
 
-let highScore = localStorage.getItem("highScore") || 0 ;
-let score = 0
+let highScore = Number(localStorage.getItem("highScore")) || 0 ;
+let score = 0;
 let time = `00:00`
 
 highScoreElement.innerText = highScore;
@@ -86,7 +86,7 @@ function render(){
 
           if(score > highScore){
             highScore = score
-           localStorage.setItem("highScore", highScore.toString)
+           localStorage.setItem("highScore", highScore.toString())
           }
      }
 
@@ -101,10 +101,10 @@ function render(){
     })
 
 }
- // intervalID = setInterval(()=>{
- //     render()
- // },300
- // )
+//  intervalID = setInterval(()=>{
+//      render()
+//  },300
+//  )
 
  startButton.addEventListener("click",()=>{
     modal.style.display = "none"
